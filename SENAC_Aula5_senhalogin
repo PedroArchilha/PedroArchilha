@@ -1,0 +1,41 @@
+var senha, repete, senha_login, acessar;
+
+do 
+{
+  senha = prompt("Digite uma senha com 6 digitos: ");
+} 
+while(senha.length != 6);
+
+repete = prompt("Repita a senha de 6 digitos: ");
+
+while(repete != senha)
+{
+  repete = prompt("A senha nao e a mesma. Digite novamente: ");
+}
+
+alert("\nSenha criada. \nAgora voce pode acessar sua conta.");
+
+acessar = prompt("\nDeseja acessar sua conta? Digite 0 para SIM e 1 para NAO: ");
+
+if(acessar == "0") 
+{
+  senha_login = prompt("\nEntre com sua senha de 6 digitos para acessar a sua conta: ");
+  for(var cont = 2; senha != senha_login && cont > 0; cont--)
+  {
+    alert("\nA senha informada nao confere. \nInsira novamente. Voce tem mais " + (cont) + " tentativa(s).");
+    senha_login = prompt("Para acessar sua conta, entre com sua senha de 6 digitos: ");
+  } 
+  if(senha == senha_login)
+  {
+    alert("Acesso permitido");
+  } 
+  else
+  {
+    senha = "Padrao2021";
+    alert("\nSenha bloqueada. \nFale com seu gerente.");
+  }
+}
+else
+{
+  alert("Tenha um bom dia de trabalho.");
+}
