@@ -1,0 +1,29 @@
+var idade = [];
+var achou = "n";
+var resposta = "s";
+var idade_procurar;
+var i;
+
+for(i = 0; resposta == "s";i++) // enqnto a resposta for s, ficara no loop
+{
+  idade[i] = prompt("Digite sua idade: ");
+  resposta = prompt("Deseja digitar outra idade? Digite s pra SIM e n para NAO: ");
+} // adiciona 1 ao i
+
+idade_procurar = parseInt(prompt("Digite a idade que deseja procurar: "));
+
+for(i = 0; achou == "n" && idade.length > i; i++) // enqnto achou for N e tamanho da idade > i, ira procurar pela idade.
+{
+  if(idade[i] == idade_procurar) // quebra o loop se achar
+  {
+    achou = "s"
+  }
+}
+if(achou =="s") //se sair do loop porque achou a idade
+{
+  alert("A idade " + idade_procurar + " esta cadastrada na posicao: " + i);
+}
+else // se sair do loop sem achar a idade
+{
+  alert("A idade" + idade_procurar + " nao esta cadastrada em nossa database.")
+}
